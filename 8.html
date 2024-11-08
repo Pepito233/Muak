@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproducción de Canción y Animación</title>
+    <style>
+        /* El fondo será negro, y todo estará centrado */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0A0A0A;
+            font-family: 'Georgia', serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Contenedor principal de todo el contenido */
+        .container {
+            text-align: center;
+        }
+
+        /* Corazón SVG con animación */
+        .heart {
+            width: 250px;
+            height: 250px;
+            animation: drawHeart 5s ease-in-out forwards;
+            opacity: 0;
+            margin-bottom: 30px;
+            transform-origin: center;
+            position: relative;
+        }
+
+        /* Animación del texto "Luchi" */
+        .luchi {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 3em;
+            color: #fff;
+            opacity: 0;
+            animation: fadeInText 5s ease-in-out forwards;
+            letter-spacing: 5px;
+        }
+
+        /* Animación del texto "Te amo mucho" */
+        .te-amo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            color: #fff;
+            opacity: 0;
+            animation: fadeInTeAmo 3s ease-in-out forwards;
+            letter-spacing: 3px;
+            margin-top: 50px;
+        }
+
+        /* Animación para el corazón */
+        @keyframes drawHeart {
+            0% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 0.7; transform: scale(1.2) rotate(15deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+
+        /* Animación para el texto "Luchi" */
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Animación para el texto "Te amo mucho" */
+        @keyframes fadeInTeAmo {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* El audio será invisible pero se reproducirá en segundo plano */
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor que tiene todo el contenido animado -->
+    <div class="container">
+        <!-- Corazón en SVG que se dibuja con la animación -->
+        <svg viewBox="0 0 100 100" class="heart" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="gradHeart" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#ff5e62;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#ff9966;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <path d="M50 80s30-20 30-40c0-10-8-18-18-18-7 0-13 5-15 12-2-7-8-12-15-12-10 0-18 8-18 18 0 20 30 40 30 40z" fill="url(#gradHeart)" />
+        </svg>
+
+        <!-- Texto "luchi" que aparecerá con animación -->
+        <div class="luchi">luchi</div>
+
+        <!-- Texto "te amo mucho" que aparecerá después con animación -->
+        <div class="te-amo">te amo mucho</div>
+    </div>
+
+    <!-- El audio en segundo plano, que se reproduce automáticamente -->
+    <audio autoplay loop>
+        <source src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/xavier-chavez-146332203/quieres-ser-mi-novia-audio-de&color=ff6600&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+    <!-- Script para mostrar el texto "te amo mucho" después de la animación -->
+    <script>
+        setTimeout(function() {
+            document.querySelector('.te-amo').style.opacity = 1;
+        }, 8000);  // Aparece después de 8 segundos (5 del corazón + 3 segundos de espera)
+    </script>
+</body>
+</html>
