@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReproducciÛn de CanciÛn y AnimaciÛn</title>
+    <title>Reproducci√≥n de Canci√≥n y Animaci√≥n</title>
     <style>
-        /* El fondo ser· negro, y todo estar· centrado */
+        /* El fondo ser√° negro, y todo estar√° centrado */
         body {
             margin: 0;
             padding: 0;
@@ -24,7 +24,7 @@
             text-align: center;
         }
 
-        /* CorazÛn SVG con animaciÛn */
+        /* Coraz√≥n SVG con animaci√≥n */
         .heart {
             width: 250px;
             height: 250px;
@@ -35,7 +35,7 @@
             position: relative;
         }
 
-        /* AnimaciÛn del texto "Luchi" */
+        /* Animaci√≥n del texto "Luchi" */
         .luchi {
             font-family: 'Brush Script MT', cursive;
             font-size: 3em;
@@ -45,7 +45,7 @@
             letter-spacing: 5px;
         }
 
-        /* AnimaciÛn del texto "Te amo mucho" */
+        /* Animaci√≥n del texto "Te amo mucho" */
         .te-amo {
             font-family: 'Dancing Script', cursive;
             font-size: 3em;
@@ -56,26 +56,26 @@
             margin-top: 50px;
         }
 
-        /* AnimaciÛn para el corazÛn */
+        /* Animaci√≥n para el coraz√≥n */
         @keyframes drawHeart {
             0% { opacity: 0; transform: scale(0) rotate(0deg); }
             50% { opacity: 0.7; transform: scale(1.2) rotate(15deg); }
             100% { opacity: 1; transform: scale(1) rotate(0deg); }
         }
 
-        /* AnimaciÛn para el texto "Luchi" */
+        /* Animaci√≥n para el texto "Luchi" */
         @keyframes fadeInText {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* AnimaciÛn para el texto "Te amo mucho" */
+        /* Animaci√≥n para el texto "Te amo mucho" */
         @keyframes fadeInTeAmo {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* El audio ser· invisible pero se reproducir· en segundo plano */
+        /* El audio ser√° invisible pero se reproducir√° en segundo plano */
         audio {
             display: none;
         }
@@ -84,7 +84,7 @@
 <body>
     <!-- Contenedor que tiene todo el contenido animado -->
     <div class="container">
-        <!-- CorazÛn en SVG que se dibuja con la animaciÛn -->
+        <!-- Coraz√≥n en SVG que se dibuja con la animaci√≥n -->
         <svg viewBox="0 0 100 100" class="heart" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="gradHeart" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -95,24 +95,24 @@
             <path d="M50 80s30-20 30-40c0-10-8-18-18-18-7 0-13 5-15 12-2-7-8-12-15-12-10 0-18 8-18 18 0 20 30 40 30 40z" fill="url(#gradHeart)" />
         </svg>
 
-        <!-- Texto "luchi" que aparecer· con animaciÛn -->
+        <!-- Texto "luchi" que aparecer√° con animaci√≥n -->
         <div class="luchi">luchi</div>
 
-        <!-- Texto "te amo mucho" que aparecer· despuÈs con animaciÛn -->
+        <!-- Texto "te amo mucho" que aparecer√° despu√©s con animaci√≥n -->
         <div class="te-amo">te amo mucho</div>
     </div>
 
-    <!-- El audio en segundo plano, que se reproduce autom·ticamente -->
+    <!-- El audio en segundo plano, que se reproduce autom√°ticamente -->
     <audio autoplay loop>
         <source src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/xavier-chavez-146332203/quieres-ser-mi-novia-audio-de&color=ff6600&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" type="audio/mpeg">
         Tu navegador no soporta la etiqueta de audio.
     </audio>
 
-    <!-- Script para mostrar el texto "te amo mucho" despuÈs de la animaciÛn -->
+    <!-- Script para mostrar el texto "te amo mucho" despu√©s de la animaci√≥n -->
     <script>
         setTimeout(function() {
             document.querySelector('.te-amo').style.opacity = 1;
-        }, 8000);  // Aparece despuÈs de 8 segundos (5 del corazÛn + 3 segundos de espera)
+        }, 8000);  // Aparece despu√©s de 8 segundos (5 del coraz√≥n + 3 segundos de espera)
     </script>
 </body>
 </html>
